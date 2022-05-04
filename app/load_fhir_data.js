@@ -106,7 +106,7 @@ window.ASCVDRisk = window.ASCVDRisk || {};
       $.when(patientQuery, labsQuery)
         .done((patientData, labResults) => {
           PatientInfo.firstName = patientData.name[0].given.join(' ');
-          PatientInfo.lastName = patientData.name[0].family.join(' ');
+          PatientInfo.lastName = patientData.name[0].family;
           PatientInfo.gender = patientData.gender;
           PatientInfo.dateOfBirth = new Date((patientData.birthDate).replace(/-/g, '/'));
           PatientInfo.age = ASCVDRisk
